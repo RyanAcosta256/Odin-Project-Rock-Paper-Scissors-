@@ -6,24 +6,14 @@ function computerChoice(){
     return choices[index];
     
 }
-let playerChoice;
-console.log(computerChoice()); //test
-
-
-
+console.log("Computer choice: "+ computerChoice());
+let playerChoice = " "'
 function getHumanChoice(){
+    let choice = prompt("Choose a hand to play for the game", "will you choose rock, paper, or scissors?");
     
-    const choiceButton = document.querySelector("#choiceButton");
-
-    choiceButton.addEventListener("click",() => {
-        let sign = prompt("choose: rock, papper, or scissors");
-        
-
-
-
-
-
-
-    });
-
+    if(choice === "rock")
 }
+
+console.log(getHumanChoice());
+
+
