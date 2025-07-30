@@ -76,10 +76,28 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-console.log("Computer choice: "+ computerSelection);
-playRound(humanSelection, computerSelection);
 
 
+
+
+
+function playGame(num_rounds_desired_to_be_played){
+    //let humanSelection = getHumanChoice();
+    //let computerSelection = getComputerChoice();
+    //console.log("Computer choice: "+ computerSelection);
+    for(let i = 0; i <num_rounds_desired_to_be_played; i++){
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        console.log("Computer choice: "+ computerSelection);
+        console.log("Human choice: "+ humanSelection);
+        playRound(humanSelection, computerSelection);
+    }
+
+    if(humanScore> computerScore){
+        console.log("Human has won the game");
+    }
+    else{
+        console.log("Computer has won the game");
+    }
+}
+playGame(5);
