@@ -5,7 +5,7 @@ let playerChoice = " ";
 let computerScore = 0;
 let humanScore = 0;
 
-function computerChoice(){
+function getComputerChoice(){
     const choices = ["rock", "paper", "scissors"];
     let index =  Math.floor(Math.random() * 3);
     return choices[index];
@@ -13,7 +13,7 @@ function computerChoice(){
 }
 
 
-console.log("Computer choice: "+ computerChoice());
+
 
 
 
@@ -36,11 +36,50 @@ function getHumanChoice(){
  
 }
 
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
 
 
 function playRound(humanChoice, computerChoice){
+    //paper beats rock, rock beats scissors, scissors beats paper
+
+    //human victories
+    if( humanChoice === "rock" && computerChoice === "scissors"){
+        humanScore+= 1;
+        console.log("humanScore + 1: " + humanScore);
+    }
+    else if( humanChoice === "scissors" && computerChoice === "paper"){
+        humanScore+= 1;
+    }
+    else if( humanChoice === "paper" && computerChoice === "rock"){
+        humanScore+= 1;
+    }//Computer victories
+    else if(computerChoice === "rock" && humanChoice === "scissors" ){
+        computerScore+= 1;
+    }
+    else if(computerChoice === "scissors" && humanChoice === "paper" ){
+        computerScore+= 1;
+    }
+    else if(computerChoice === "paper" && humanChoice === "rock" ){
+        computerScore+= 1;
+    }
     
+
+
+
+
+
+    if(humanScore>computerScore){
+        return console.log("humans have won");
+    }
+    else{
+        return console.log("computer has won");
+    }
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log("Computer choice: "+ computerSelection);
+playRound(humanSelection, computerSelection);
 
 
